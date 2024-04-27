@@ -1,0 +1,169 @@
+// Primary
+$Cyan: #2acfcf;
+$Dark-Violet: #3b3054;
+$white: #ffffff;
+
+// Secondary 
+$Red: #f46262;
+
+// Neutral
+$Gray: #bfbfbf;
+$Grayish-Violet: #9e9aa7;
+$Very-Dark-Blue: #35323e;
+$Very-Dark-Violet: #232127;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Url {
+    margin-top: 60px;
+    padding-bottom: 30px;
+    background-color: #f3f3f3;
+
+
+    .Search-Section {
+        height: 150px;
+        @include flex;
+        background-color: $Dark-Violet;
+        margin: 0 5%;
+        border-radius: 10px;
+        margin-top: -50px;
+
+        .Url-Container {
+            height: 100%;
+            width: 90%;
+            background: url("../assets/bg-boost-mobile.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include flex;
+            flex-direction: column;
+            gap: 25px;
+
+            input {
+                height: 50px;
+                width: 80%;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                font-size: 14px;
+                font-weight: 600;
+                color: $Very-Dark-Blue;
+                padding-left: 5%;
+
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $Grayish-Violet;
+                }
+            }
+
+            button {
+                @include flex;
+                height: 50px;
+                width: 80%;
+                color: $white;
+                background-color: $Cyan;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                font-size: 18px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+
+                &:hover,
+                &:active {
+                    background-color: #068f8f;
+                }
+            }
+        }
+    }
+
+    .Result-Section {
+        padding: 0 5%;
+        @include flex;
+
+        ul {
+            width: 100%;
+            @include flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-top: 30px;
+
+            li {
+                list-style: none;
+                height: 180px;
+                width: 100%;
+                background-color: $white;
+                border-radius: 8px;
+                padding: 5px 0 10px 0;
+
+                .Inputed-Url {
+                    display: flex;
+                    align-items: center;
+                    height: 30%;
+                    border-bottom: 1px solid $Grayish-Violet;
+                    padding-left: 5%;
+                    font-weight: 600;
+                    font-size: 17px;
+                }
+
+                .Shortened-Url {
+                    display: flex;
+                    align-items: center;
+                    height: 40%;
+                    padding-left: 5%;
+                    color: $Cyan;
+                    font-weight: 600;
+                    font-size: 17px;
+                }
+
+                .Button {
+                    @include flex;
+                    height: 30%;
+
+                    button {
+                        width: 90%;
+                        height: 100%;
+                        border: none;
+                        outline: none;
+                        color: $white;
+                        background-color: $Cyan;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 18px;
+                        font-weight: 500;
+                        @include flex;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease-in-out;
+
+                        &:hover,
+                        &:active {
+                            background-color: #068f8f;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .Url {
+        margin-top: 20px;
+
+        .Search-Section {
+            .Url-Container {
+
+                input,
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

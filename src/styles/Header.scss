@@ -1,0 +1,25 @@
+.Header {
+    height: 80px;
+
+    nav {
+        height: 100%;
+
+        ul {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50%;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .Header {
+        height: 70px;
+    }
+}

@@ -1,0 +1,125 @@
+// Primary
+$Cyan: #2acfcf;
+$Dark-Violet: #3b3054;
+$white: #ffffff;
+
+// Secondary 
+$Red: #f46262;
+
+// Neutral
+$Gray: #bfbfbf;
+$Grayish-Violet: #9e9aa7;
+$Very-Dark-Blue: #35323e;
+$Very-Dark-Violet: #232127;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Hero {
+    height: 90vh;
+
+    .Hero-Img {
+        height: 50%;
+        padding-left: 5%;
+
+        img {
+            margin-right: -10%;
+        }
+    }
+
+    .Hero-Content {
+        height: 45%;
+        @include flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 0 5%;
+        margin-top: 30px;
+
+        .Content-Title {
+            h1 {
+                font-size: 40px;
+                line-height: 50px;
+                font-weight: 700;
+                color: $Very-Dark-Blue;
+            }
+        }
+
+        .Content-Subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: $Grayish-Violet;
+        }
+
+        .Content-Button {
+            width: 100%;
+            @include flex;
+            margin-top: 10px;
+
+            button {
+                height: 45px;
+                width: 170px;
+                color: $white;
+                background-color: $Cyan;
+                border: none;
+                outline: none;
+                border-radius: 25px;
+                font-size: 18px;
+                line-height: 50px;
+                font-weight: 500;
+                @include flex;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+
+                &:hover,
+                &:active {
+                    background-color: #068f8f;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .Hero {
+        .Hero-Img {
+            height: 47%;
+        }
+
+        .Hero-Content {
+            height: 50%;
+            margin-top: 20px;
+            column-gap: 5px;
+            justify-content: flex-start;
+
+            .Content-Title {
+                h1 {
+                    font-size: 38px;
+                }
+            }
+
+            .Content-Subtitle {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .Hero {
+        .Hero-Content {
+            .Content-Title {
+                h1 {
+                    font-size: 35px;
+                }
+            }
+
+            .Content-Subtitle {
+                font-size: 16px;
+            }
+        }
+    }
+}
